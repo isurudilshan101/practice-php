@@ -30,35 +30,30 @@ $connection = mysqli_connect('localhost','root','','loginapp');
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-
-		
 </head>
 <body>
 
 <div class="container">
 	
 	<div class="col-sm-6">
-		<th>id</th>
-		<th>username</th>
-		<th>passwordS</th>
 		
-<?php
 
-		while($row = mysqli_fetch_row($result)){
-?>
-			 <td> <?php echo $row['id'] ;?></td>
-		
-			<td ><?php echo $row['username']; ?></td>
-			<td> <?php echo $row['password']; ?></td>
-			
-<?php
+		<?php
+
+		while($row=mysqli_fetch_assoc($result)){
+			echo "<br>";
+			?>
+			<pre>
+			<?php
+			print_r($row);
+
+			?>
+			</pre>
+			<?php
 		}
 
-?>
 
-
-		
+		?>
 
 
 	</div>
