@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
 	//}else
 	//echo "noooo";
 
-$connection = mysqli_connect('localhost','root','','loginapp');
+$connection = mysqli_connect('localhost','root',' ','loginapp');
 		if($connection)
 
 		{
