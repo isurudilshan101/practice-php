@@ -4,8 +4,8 @@ if(isset($_POST['submit'])){
 
 	//echo "yes we got it";
 
-	//$username=$_POST['username'];
-	//$password=$_POST['password'];
+	$username=$_POST['username'];
+	$password=$_POST['password'];
 
 	//if($username&&$password){
 	//echo $username;
@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
 	//}else
 	//echo "noooo";
 
-$connection = mysqli_connect('localhost','root',' ','loginapp');
+$connection = mysqli_connect('localhost','root','','loginapp');
 		if($connection)
 
 		{
@@ -26,11 +26,18 @@ $connection = mysqli_connect('localhost','root',' ','loginapp');
 			die("database connection failed");
 		}
 
+		$query = "INSERT INTO users(username,password)";
+		$query .= "VALUES ('$username','$password')";
+
+		$result = mysqli_query($connection, $query);
+		if(!$result)
+		{
+			die('Query FAILED'. mysqli_error());
+		}
+
 
 	}
  
-
-
 ?>
 
 <!DOCTYPE html>
