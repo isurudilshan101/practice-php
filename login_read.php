@@ -45,7 +45,7 @@ $connection = mysqli_connect('localhost','root','','loginapp');
 			?>
 			<pre>
 			<?php
-			print_r($row);
+			print_r($row);	
 
 			?>
 			</pre>
